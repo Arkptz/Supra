@@ -82,7 +82,7 @@ class Supra(Flow):
             self.wait_click('//div[contains(@class, "[#294D7A]")]')
             #self.wait_click('//button[.="Continue"]')
             self.wait_click('''//a[.="Let's Go"]''')
-            self.wait_click('//button[contains(@class,"whitespace-nowrap font-bold text-white md:text-lg")]')#copy_link
+            self.wait_click('//button[contains(@class,"whitespace-nowrap font-bold text-white md:text-lg")]', timeout=90)#copy_link
             self.wait_click('//button[.="Continue"]')
             #self.get_new('https://supraoracles.com/blastoff/ru/learn')
             self.wait_click('//a[.="Start Mission"]')

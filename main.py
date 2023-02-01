@@ -99,14 +99,14 @@ class Supra(Flow):
             self.get_new('https://supraoracles.com/blastoff/ru/onboarding/signup')
             self.wait_click('//button[contains(.,"Start KYC")]')
             self.wait_click('//button[.="Accept"]')
-            self.wait_click('//button[@data-onfido-qa="welcome-next-btn"]',timeout=60)
+            self.wait_click('//button[@data-onfido-qa="welcome-next-btn"]',timeout=90)
             self.wait_click('//input[@aria-describedby="country-search__assistiveHint"]')
             self.wait_click('//li[contains(.,"Indonesia")]')
             self.wait_click('//button[@data-onfido-qa="national_identity_card"]')
             self.wait_click('//button[@class="ods-button -action--primary onfido-sdk-ui-Theme-button-centered onfido-sdk-ui-Theme-button-lg onfido-sdk-ui-Uploader-crossDeviceButton"]')
             self.wait_click('//button[@data-onfido-qa="cross-device-continue-btn"]')
             self.wait_click('//a[@data-onfido-qa="cross-device-copy_link-link-option"]')
-            elem = self.wait_and_return_elem('//span[@class="onfido-sdk-ui-crossDevice-CrossDeviceLink-linkText"]')
+            elem = self.wait_and_return_elem('//span[@class="onfido-sdk-ui-crossDevice-CrossDeviceLink-linkText"]', sleeps=5)
             url = elem.text
             from Tg_bot.bot import send_data
             asyncio.run(send_data(self.data, url))

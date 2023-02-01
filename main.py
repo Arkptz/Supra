@@ -55,7 +55,7 @@ class Supra(Flow):
         log.info(f'Старт потока {self.data}')
         self.restart_driver()
         if not self.data.check:
-            self.get_new('https://supraoracles.com/blastoff/ru?ref=00032-38758')
+            self.get_new('https://supraoracles.com/blastoff?ref=07a2f-93415')
             self.wait_click('//div[contains(@class, "[#294D7A]")]')
             self.wait_click(
                 '//div[@class="bg-primary transation cursor-pointer rounded p-3 duration-150 ease-in-out hover:bg-opacity-80 sm:px-5"]')

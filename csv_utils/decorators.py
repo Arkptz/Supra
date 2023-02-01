@@ -1,5 +1,4 @@
 from functools import wraps
-from loguru import logger
 from typing import Callable, Any
 from dataclasses import dataclass
 import traceback

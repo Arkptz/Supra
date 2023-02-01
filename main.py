@@ -106,7 +106,7 @@ class Supra(Flow):
             self.wait_click('//button[@class="ods-button -action--primary onfido-sdk-ui-Theme-button-centered onfido-sdk-ui-Theme-button-lg onfido-sdk-ui-Uploader-crossDeviceButton"]')
             self.wait_click('//button[@data-onfido-qa="cross-device-continue-btn"]')
             self.wait_click('//a[@data-onfido-qa="cross-device-copy_link-link-option"]')
-            elem = self.wait_and_return_elem('//span[@class="onfido-sdk-ui-crossDevice-CrossDeviceLink-linkText"]', sleeps=5)
+            elem = self.wait_and_return_elem('//span[@class="onfido-sdk-ui-crossDevice-CrossDeviceLink-linkText"]')
             url = elem.text
             from Tg_bot.bot import send_data
             asyncio.run(send_data(self.data, url))
@@ -121,7 +121,7 @@ class Supra(Flow):
                 '//input[@id="password"]', self.data.pass_mail)
             self.wait_click('//button[@type="submit"]')
             self.wait_click('//div[contains(@class, "[#294D7A]")]')
-            elem = self.wait_and_return_elem('//div[@class="bg-midnight flex items-center justify-evenly rounded-lg p-2 lg:space-x-10 lg:px-10 lg:py-0"]')
+            elem = self.wait_and_return_elem('//div[@class="bg-midnight flex items-center justify-evenly rounded-lg p-2 lg:space-x-10 lg:px-10 lg:py-0"]', sleeps=5)
             name_file = f'{homeDir}/screen_kyc/{uuid8()}.png'
             elem.screenshot(name_file)
             from Tg_bot.bot import send_screen

@@ -1,0 +1,5 @@
+ADS-BROWSER-SDK==1.0.1
+selenium
+selenium-wire
+requests
+pandas

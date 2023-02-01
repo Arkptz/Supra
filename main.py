@@ -121,6 +121,11 @@ class Supra(Flow):
                 '//input[@id="password"]', self.data.pass_mail)
             self.wait_click('//button[@type="submit"]')
             self.wait_click('//div[contains(@class, "[#294D7A]")]')
+            sleep(5)
+            htmp = self.driver.find_element(By.TAG_NAME, 'html')
+            for i in range(5):
+                htmp.send_keys(Keys.PAGE_UP*10)
+                sleep(0.2)
             elem = self.wait_and_return_elem('//div[@class="flex flex-col gap-x-4 space-y-4 md:flex-row-reverse lg:justify-end lg:space-y-0"]', sleeps=5)
             name_file = f'{homeDir}/screen_kyc/{uuid8()}.png'
             elem.screenshot(name_file)

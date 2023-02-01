@@ -3,7 +3,7 @@ import requests
 from dataclasses import dataclass
 from requests.auth import HTTPProxyAuth
 from time import sleep
-from loguru import logger as log
+import logging as log
 
 
 @dataclass(repr=True)

@@ -46,7 +46,7 @@ class Supra(Flow):
             self.close_driver()
         # metamask_path = f'{homeDir}\\files\\metamask.crx'#f'{homeDir}\\files\\nkbihfbeogaeaoehlefnkodbefgpgknn\\10.24.1_0'
         self.start_driver(
-            ads=True, local_url_ads='http://local.adspower.com:61742')
+            ads=True, local_url_ads=cf.url_ads)
 
     def go(self,):
         if self.proxy:

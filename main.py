@@ -121,7 +121,7 @@ class Supra(Flow):
                 '//input[@id="password"]', self.data.pass_mail)
             self.wait_click('//button[@type="submit"]')
             self.wait_click('//div[contains(@class, "[#294D7A]")]')
-            elem = self.wait_and_return_elem('//div[@class="bg-midnight flex items-center justify-evenly rounded-lg p-2 lg:space-x-10 lg:px-10 lg:py-0"]', sleeps=5)
+            elem = self.wait_and_return_elem('//div[@class="flex flex-col gap-x-4 space-y-4 md:flex-row-reverse lg:justify-end lg:space-y-0"]', sleeps=5)
             name_file = f'{homeDir}/screen_kyc/{uuid8()}.png'
             elem.screenshot(name_file)
             from Tg_bot.bot import send_screen

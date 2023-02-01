@@ -54,13 +54,10 @@ class Proxy_Class:
 
             try:
                 response = s.get(url='https://httpbin.org/ip', timeout=5)
-                if self.logging:
-                    log.success(
-                        f'{self.logging}Новый айпи - {response.json()["origin"]}')
                 if response.status_code == 200:
                     return True
             except requests.ConnectionError as ex:
-                log.debug(f'{s.proxies} \n {ex}')
+                log.info(f'{s.proxies} \n {ex}')
 
             sleep(2)
         return False
